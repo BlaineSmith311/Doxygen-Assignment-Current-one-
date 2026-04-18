@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "Employee.h"
 #include "Supervisor.h"
@@ -6,6 +5,19 @@
 
 using namespace std;
 
+/**
+ * @file main.cpp
+ * @brief Test driver program for Employee, Supervisor, and Officer classes.
+ */
+
+/**
+ * @brief Runs a series of tests on an Employee object.
+ * 
+ * This function demonstrates polymorphic behavior by calling
+ * print, calculatePay, and anniversary on the passed object.
+ * 
+ * @param e Reference to an Employee object (or derived class).
+ */
 void runEmployeeTests(Employee & e);
 
 int main() {
@@ -55,14 +67,24 @@ int main() {
   return 0;
 }
 
+/**
+ * @brief Runs test cases on an Employee object.
+ * 
+ * Prints the object, calculates pay, runs anniversary logic,
+ * and prints again to show changes.
+ * 
+ * @param e Employee reference (supports derived classes via polymorphism)
+ */
 void runEmployeeTests(Employee &e) {
   
   cout << "Initial print():" << endl;
   e.print();
+
   cout << "Calculated Pay: " << e.calculatePay() << endl;
+
   cout << "Anniversary Test: ";
   e.anniversary();
+
   cout << "Final print():" << endl;
   e.print();
-
 }
